@@ -17,18 +17,8 @@ jobs:
     - uses: actions/checkout@v4
 
 
-
-    # Step 6: Docker login (using GitHub secrets)
-    - name: Login to Docker Hub
-      uses: docker/login-action@v2
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_TOKEN }}
-
-    # Step 7: Build Docker image (optional)
-    - name: Build Docker image
-      run: docker build -t username/myapp:latest .
-
-    # Step 8: Push Docker image to Docker Hub (optional)
-    - name: Push Docker image
-      run: docker push username/myapp:latest
+- name: Login to Docker Hub
+  uses: docker/login-action@v2
+  with:
+    username: ${{ secrets.DOCKER_USERNAME }}
+    password: ${{ secrets.DOCKER_TOKEN }}
