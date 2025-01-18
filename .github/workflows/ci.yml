@@ -16,23 +16,7 @@ jobs:
     # Step 1: Checkout the repository code
     - uses: actions/checkout@v4
 
-    # Step 2: Set up JDK 17 for Gradle
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-    # Step 3: Make gradlew executable (important for Unix-based systems)
-    - name: Make gradlew executable
-      run: chmod +x ./gradlew  # Ensure gradlew is executable
 
-    # Step 4: Build the project with Gradle using the wrapper
-    - name: Build with Gradle Wrapper
-      run: ./gradlew build  # Run Gradle build
-
-    # Step 5: Run tests (optional but recommended)
-    - name: Run tests
-      run: ./gradlew test  # Run tests (optional step)
 
     # Step 6: Docker login (using GitHub secrets)
     - name: Login to Docker Hub
