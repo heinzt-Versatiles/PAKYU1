@@ -22,7 +22,6 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-
     # Step 3: Make gradlew executable (important for Unix-based systems)
     - name: Make gradlew executable
       run: chmod +x ./gradlew  # Ensure gradlew is executable
