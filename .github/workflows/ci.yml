@@ -1,4 +1,4 @@
-name: Build and Publish with Gradle and Docker
+- name: Build and Publish with Gradle and Docker
 
 on:
   push:
